@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { DeseosService } from '../../services/deseos.service';
 
 
 
@@ -8,5 +9,7 @@ import { Component } from "@angular/core";
 })
 
 export class PendientesPage {
-
+    constructor(public deseosService: DeseosService ){
+        
+    }
 }
