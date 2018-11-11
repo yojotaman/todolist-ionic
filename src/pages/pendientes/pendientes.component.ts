@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { DeseosService } from '../../services/deseos.service';
+import { Lista } from "../../models";
 
 
 
@@ -11,5 +12,9 @@ import { DeseosService } from '../../services/deseos.service';
 export class PendientesPage {
     constructor(public deseosService: DeseosService ){
         
+    }
+
+    listaSeleccionada(lista: Lista){
+        console.log(lista);
     }
 }
