@@ -7,10 +7,16 @@
 <ion-content>
     <img src="../../assets/imgs/pendientes.jpg" alt="">
 
+
     <ion-list>
         <button ion-item *ngFor="let lista of deseosService.listas" (click)="listaSeleccionada(lista)">
           {{ lista.titulo }}
         </button>
     </ion-list>
+
+    <ion-fab bottom right>
+        <button ion-fab mini (click)="agregarLista()"><ion-icon name="add"></ion-icon></button>
+
+    </ion-fab>
 
 </ion-content>

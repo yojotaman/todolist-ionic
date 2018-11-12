@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { DeseosService } from '../../services/deseos.service';
 import { Lista } from "../../models";
+import { NavController } from "ionic-angular";
+import { AgregarPage } from '../agregar/agregar.component';
 
 
 
@@ -10,11 +12,16 @@ import { Lista } from "../../models";
 })
 
 export class PendientesPage {
-    constructor(public deseosService: DeseosService ){
+    constructor(public deseosService: DeseosService,
+                private navCtrl: NavController ){
         
     }
 
     listaSeleccionada(lista: Lista){
         console.log(lista);
+    }
+
+    agregarLista(){
+        this.navCtrl.push( AgregarPage )
     }
 }
