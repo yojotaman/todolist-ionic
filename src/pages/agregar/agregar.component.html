@@ -13,15 +13,20 @@
 
         <ion-item>
             <ion-label floating>Nueva tarea</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="nombreItem" type="text" (keyup.enter)="agregarItem()"></ion-input>
         </ion-item>
 
     </ion-list>
 
-    <ion-list>
-        <button ion-item detail-none>
-            <ion-icon name="square-outline" item-start></ion-icon>
-            Programar
+
+    <ion-list *ngIf="lista.items.length > 0">
+        <ion-list-header>
+            Tareas por hacer
+        </ion-list-header>
+        <button ion-item detail-none (click)="actualizarTarea(item)" class="animated fadeInDown" *ngFor="let item of lista.items">
+            <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start> {{ item.desc }}</ion-icon>
+            <ion-icon *ngIf="!item.completado" name="square-outline" item-start> {{ item.desc }}</ion-icon>
+            
         </button>
     </ion-list>
 
